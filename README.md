@@ -21,7 +21,7 @@
 
 ### read_large_pi.py
 
-查询（8位数1s以内，测试机器腾讯云1核2G机器），目前是存在一个小bug的，尚未修复
+查询（8位数1s以内，测试机器腾讯云1核2G机器），目前存在一个小bug，尚未修复
 
 ### pi_date.txt
 
@@ -30,3 +30,9 @@
 ### pi.json
 
 根据create_pi_d.py生成的json
+
+### read_large_pi.exe
+
+根据`read_large_pi.py`文件打包出来的exe文件，示例见
+
+![1.png](./1.png)

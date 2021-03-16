@@ -1,6 +1,6 @@
+import copy
 import time
 from functools import partial
-import copy
 
 """
 http://www.numberworld.org/y-cruncher/
@@ -30,8 +30,12 @@ def m1(target_str, block_size=1024 * 8):
 
 
 if __name__ == "__main__":
-    target_str = "1415926"
+    target_str = input("请输入需要查询的数字\n")
     s1 = time.time()
     output = m1(target_str, 2048 * 20)
-    print(output)
-    print("m1 time: ", time.time() - s1)
+    if output == -1:
+        print("未查询到")
+    else:
+        print("开始位数：", output)
+    print("花费时间: ", time.time() - s1)
+    input("输入任意键退出查询")
