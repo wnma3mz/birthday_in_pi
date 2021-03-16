@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 with open("pi.json", "r") as f:
     date_digits_d = json.load(f)
-# 微信后台的token
+# 微信开发者配置的token
 token = ""
 reply = """
 <xml><ToUserName><![CDATA[%s]]></ToUserName>
