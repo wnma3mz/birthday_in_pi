@@ -23,14 +23,14 @@ def m1(target_str, block_size=1024 * 8):
         for chunk in chunked_file_reader(f, block_size=block_size):
             if target_str in old_chunk + chunk:
                 index = (old_chunk + chunk).find(target_str)
-                return i * block_size + index + 1
+                return i * block_size + index + 1 - 2
             i += 1
-            old_chunk = copy.deepcopy(chunk[-len(target_str) :])
+            # old_chunk = copy.deepcopy(chunk[-len(target_str):])
     return -1
 
 
 if __name__ == "__main__":
-    target_str = "19971113"
+    target_str = "1415926"
     s1 = time.time()
     output = m1(target_str, 2048 * 20)
     print(output)
