@@ -3,7 +3,8 @@ import time
 from functools import partial
 
 """
-http://www.numberworld.org/y-cruncher/
+使用http://www.numberworld.org/y-cruncher/生成的txt文件，填写对应的文件路径至fname中。
+pi_str.txt为小数据参考测试
 """
 fname = "pi_str.txt"
 
@@ -27,6 +28,13 @@ def m1(target_str, block_size=1024 * 8):
             i += 1
             old_chunk = copy.deepcopy(chunk[-len(target_str) :])
     return -1
+
+
+def m2(target_str):
+    # 一般查询方法的性能，若查询不到则返回-2（-1+1-2）
+    with open(fname) as f:
+        data = f.read()
+    return data.find(target_str) + 1 - 2
 
 
 if __name__ == "__main__":
